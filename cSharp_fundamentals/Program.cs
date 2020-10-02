@@ -6,45 +6,26 @@ namespace cSharp_fundamentals
     {
         static void Main(string[] args)
         {
-            /*
-            //write on console
-            Console.Write("What's your name?"); //No new line
-            string name = Console.ReadLine(); //read from console
-            Console.WriteLine("Hello " + name); //With new line
-            */
+            //Casting
+           
+            double pi = 3.14;
+            int intpi = (int)pi;
 
-            //**********************************************************
+            double num1 = 15;
+            double num2 = 10.5;
 
-            //Premative types and values
+            //Floor
+            Console.WriteLine(Math.Floor(num2));
 
-            //Integer
-            int maxInt = int.MaxValue;
-            Console.WriteLine(maxInt); //2147483647
+            //Same as Max, Min, Round, Sqrt, Pow, Ceiling, Abs,
 
-            long maxLong = long.MaxValue;
-            Console.WriteLine(maxLong); //9223372036854775807
-
-            //Decimal
-            decimal maxDeci = decimal.MaxValue;
-            Console.WriteLine(maxDeci); //79228162514264337593543950335
-
-            //Float
-            float maxFloat = float.MaxValue;
-            Console.WriteLine(maxFloat); //3.4028235E+38
-
-            //Double
-            double maxDouble = double.MaxValue;
-            Console.WriteLine(maxDouble); //1.7976931348623157E+308
-
-            //Variable on the fly. similar to auto in c++
-            var cPlusPlusAuto = "Tanveer";
-            Console.WriteLine(cPlusPlusAuto);
-            //cPlusPlusAuto = 2; //Error
-
-            //Get the type of a data
-            Console.WriteLine("cPlusPlusAuto is a {0}", cPlusPlusAuto.GetTypeCode());
-
-
+            //Random number
+            Random rand = new Random();
+            Console.WriteLine("Random number between 1 - 10");
+            for(int i = 0; i < 10; i++)
+            {
+                Console.WriteLine(rand.Next(1, 11));
+            }
 
         }
     }
