@@ -7,21 +7,27 @@ namespace cSharp_fundamentals
 {
     class Program
     {
-        static void Main(string[] args)
+        //Exception
+
+        static void Main(string[] arg)
         {
-
-            //List
-
-            List<int> list = new List<int>();
-            list.Add(2);
-
-            //Add array into list
-            int[] numArray = { 1, 2, 3, 4 };
-            list.AddRange(numArray);
-
-            for(int i = 0; i < list.Count; i++)
+            int x = int.Parse(Console.ReadLine());
+            try
             {
-                Console.WriteLine(list[i]);
+                Console.WriteLine("{0}/{1} = {2}", 10, x, 10 / x);
+                    
+            }
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine(ex.GetType().Name);//Name of the error type
+                Console.WriteLine(ex.Message);
+                //throw ex; //Throw the current exception
+                //throw new InvalidCastException("Operation failed"); //throw new exception with a message
+
+            }
+            catch (Exception ex) //Default catch block
+            {
+                Console.WriteLine(ex.Message);
             }
         }
     }
