@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 
 
 namespace cSharp_fundamentals
 {
-    //Delegating. passing a method to a function.
-    delegate double GetSum(double num1, double num2);
+    
     
     class Program
     {
@@ -15,21 +15,22 @@ namespace cSharp_fundamentals
 
         static void Main(string[] arg)
         {
-            //Lambda functions
-            //func<param1, param2, returnt type>
-            Func<int, int, bool> isEqual = (x, y) => x > y;
-
-            Console.WriteLine(isEqual.Invoke(10, 9));
-
-            //Appling lambda on a list
-            List<int> fullList = new List<int> { 1, 2, 3, 3, 4, 5, 6, 7, 8, 9 };
-
-            //Filtering out the odd numbers and store it in a new list
-            List<int> oddList = fullList.Where(n=>n%2!=0).ToList();
-
-            foreach(int value in oddList)
+            //string ranString;
+            //IO
+            string[] custs = new string[] { "Tom", "dick", "Harry" };
+            using (StreamReader sr = new StreamReader("/Users/Opel/Desktop/text.txt"))
             {
-                Console.WriteLine(value);
+                while (!sr.EndOfStream) 
+                {
+                    Console.WriteLine(sr.ReadLine());
+                }
+            }
+            using(StreamWriter sw = new StreamWriter("/Users/Opel/Desktop/text.txt", append:true))
+            {
+                foreach(string c in custs)
+                {
+                    sw.WriteLine(c);
+                }
             }
 
         }
