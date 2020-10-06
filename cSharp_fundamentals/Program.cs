@@ -10,7 +10,8 @@ namespace cSharp_fundamentals
 
         static void Main(string[] arg)
         {
-            
+            KeyValue<int, double> kv = new KeyValue<int, double>(4, 5.6);
+            kv.showDataType();
         }
     }
 }
