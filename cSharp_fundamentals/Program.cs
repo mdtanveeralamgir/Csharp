@@ -14,14 +14,11 @@ namespace cSharp_fundamentals
 
         static void Main(string[] arg)
         {
-            //Annonomus function
-            //here GetSum is the data type where the return type is determined by the return of the function
-            GetSum sum = delegate (double num1, double num2)
-            {
-                return num1 + num2;
-            };
+            //Lambda functions
+            //func<param1, param2, returnt type>
+            Func<int, int, bool> isEqual = (x, y) => x > y;
 
-            Console.WriteLine(sum(5,20));
+            Console.WriteLine(isEqual(10, 9));
            
         }
     }
