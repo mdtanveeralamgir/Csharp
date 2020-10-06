@@ -5,15 +5,34 @@ using System.Text;
 
 namespace cSharp_fundamentals
 {
+    struct Customers
+    {
+        private string name;
+        private double balance;
+        private string id;
+
+        public void createCustomer(string name, string id, double balance)
+        {
+            this.name = name;
+            this.id = id;
+            this.balance = balance;
+        }
+
+        public void showCustomer()
+        {
+            Console.WriteLine("This is {0}, with id {1}. He has a balance of {2}", name, id, balance);
+        }
+    }
     
     class Program
     {
-        public enum Grades { F = 0, D = 1, C = 2, B = 3, A = 4 }
+        
 
         static void Main(string[] arg)
         {
-            Grades myGrade = Grades.A;
-            Console.WriteLine(myGrade);
+            Customers opel = new Customers();
+            opel.createCustomer("Opel", "133", 4000);
+            opel.showCustomer();
            
         }
     }
