@@ -7,28 +7,31 @@ namespace cSharp_fundamentals
 {
     class Program
     {
-        //Exception
 
         static void Main(string[] arg)
         {
-            int x = int.Parse(Console.ReadLine());
-            try
-            {
-                Console.WriteLine("{0}/{1} = {2}", 10, x, 10 / x);
-                    
-            }
-            catch (DivideByZeroException ex)
-            {
-                Console.WriteLine(ex.GetType().Name);//Name of the error type
-                Console.WriteLine(ex.Message);
-                //throw ex; //Throw the current exception
-                //throw new InvalidCastException("Operation failed"); //throw new exception with a message
+            Animal a = new Animal(5.0, 300.2, "Roar", "Tiger");
+            a.Name = "Lion";
+            Console.WriteLine(a.toString());
+            Console.WriteLine(Animal.getNumOfAnimals());
 
-            }
-            catch (Exception ex) //Default catch block
+            //Specifying the order of the param
+            Console.WriteLine(a.getSum(num2: 3, num1: 4));
+
+
+            //Different way to create object
+            Animal Grover = new Animal
             {
-                Console.WriteLine(ex.Message);
-            }
+                height = 5,
+                weight = 20,
+                name = "Grover",
+                sound = "Grr"
+            };
+            Console.WriteLine(Grover.toString());
+
+            Dog d = new Dog(2, 15, "Woff", "Misti", "Meat");
+            Console.WriteLine(d.toString());
+
         }
     }
 }
