@@ -5,13 +5,16 @@ using System.Text;
 
 namespace cSharp_fundamentals
 {
+    
     class Program
     {
+        public enum Grades { F = 0, D = 1, C = 2, B = 3, A = 4 }
 
         static void Main(string[] arg)
         {
-            KeyValue<int, double> kv = new KeyValue<int, double>(4, 5.6);
-            kv.showDataType();
+            Grades myGrade = Grades.A;
+            Console.WriteLine(myGrade);
+           
         }
     }
 }
