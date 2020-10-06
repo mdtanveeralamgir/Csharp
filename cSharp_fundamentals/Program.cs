@@ -5,24 +5,8 @@ using System.Text;
 
 namespace cSharp_fundamentals
 {
-    struct Customers
-    {
-        private string name;
-        private double balance;
-        private string id;
-
-        public void createCustomer(string name, string id, double balance)
-        {
-            this.name = name;
-            this.id = id;
-            this.balance = balance;
-        }
-
-        public void showCustomer()
-        {
-            Console.WriteLine("This is {0}, with id {1}. He has a balance of {2}", name, id, balance);
-        }
-    }
+    //Delegating. passing a method to a function.
+    delegate double GetSum(double num1, double num2);
     
     class Program
     {
@@ -30,9 +14,14 @@ namespace cSharp_fundamentals
 
         static void Main(string[] arg)
         {
-            Customers opel = new Customers();
-            opel.createCustomer("Opel", "133", 4000);
-            opel.showCustomer();
+            //Annonomus function
+            //here GetSum is the data type where the return type is determined by the return of the function
+            GetSum sum = delegate (double num1, double num2)
+            {
+                return num1 + num2;
+            };
+
+            Console.WriteLine(sum(5,20));
            
         }
     }
